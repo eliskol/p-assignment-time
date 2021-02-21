@@ -24,7 +24,23 @@ window.addEventListener('load', function() {
     var hours = Math.floor(totSec/3600);
     var minutes = Math.floor((totSec%3600)/60);
     var seconds = totSec % 60;
-    var formattedTime = hours + ':' + minutes + ':' + seconds + ' taken on this assignment!'
+    var minutesF;
+    var secondsF;
+
+    if(seconds < 10){
+        secondsF = '0' + seconds.toString();
+    }
+    else{
+        secondsF = seconds;
+    }
+
+    if(minutes < 10){
+        minutesF = '0' + minutes.toString();
+    }
+    else{
+        minutesF = minutes;
+    }
+    var formattedTime = hours + ':' + minutesF + ':' + secondsF + ' taken on this assignment!';
     console.log(formattedTime);
 
 
